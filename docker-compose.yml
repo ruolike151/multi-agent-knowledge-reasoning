@@ -1,0 +1,17 @@
+name: akr   # 仓库路径含中文，Compose 由目录名推导出的项目名为空，必须显式指定
+
+services:
+  neo4j:
+    image: neo4j:5.26
+    container_name: akr-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/akr-local-pass
+      NEO4J_server_memory_heap_max__size: 1G
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  neo4j_data:

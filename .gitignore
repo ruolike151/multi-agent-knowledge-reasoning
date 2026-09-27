@@ -1,0 +1,40 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ---- 凭据与本地配置 ----
+.env
+.env.*
+!.env.example
+
+# ---- 数据与运行产物（本地生成，不入库） ----
+*.db
+*.sqlite
+*.sqlite3
+*.log
+data/
+artifacts/
+uploads/
+cache/
+tmp/
+
+# ---- 基线挂载点：参考项目以只读方式挂载，不复制源码进仓库 ----
+# 见设计文档 D-02。若采用 submodule 可删除下一行。
+baseline/
+
+# ---- IDE / 系统 ----
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
+
+# ---- 模型与向量库本地持久化目录 ----
+.chroma/
+neo4j/
